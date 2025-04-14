@@ -137,4 +137,8 @@ setInterval(() => {
 updateCertificate(currentIndex);
 
 
-
+// Footer Year
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("year").textContent = new Date().getFullYear();
+  });
+  
