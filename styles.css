@@ -1,0 +1,547 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Variables */
+:root {
+  
+  --font-size-base: 18px;
+  --color: #FFD700;
+  --shadow: rgba(255, 215, 0, 0.3);
+  --background: #121212;
+  --text-color: white;
+  --nav-background: black;
+  --card-color: #1f1f1f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text-color);
+  text-align: center;
+}
+
+
+/* =================================
+    Navigation Bar
+================================ */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: var(--nav-background);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  /* color: #C084FC; */
+  color: var(--color);
+}
+
+.section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h1 span {
+  /* color: #C084FC; */
+  color: var(--color);
+}
+
+h2 {
+  /* font-size: 2.5em; */
+  font-size: 3em;
+}
+
+/* =================================
+    Projects Section
+================================ */
+.project-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project {
+  /* background: #222; */
+  background: var(--card-color);
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =================================
+    Home Section Image
+    ================================ */
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color);
+  box-shadow: 0px 0px 15px var(--shadow);
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+  /* box-shadow: 0px 0px 20px rgba(192, 132, 252, 0.8); */
+  box-shadow: 0px 0px 20px var(--shadow);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger menu style */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+@media (max-width: 740px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: black;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* =============================
+    Education Section
+    ============================= */
+.education-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.education-card {
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+  border-left: 5px solid var(--color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.education-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  /* color: #C084FC; */
+  color: var(--color);
+}
+
+.education-card p {
+  font-size: 1em;
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+/* ==================================
+    Certificates Section
+    ================================== */
+.certificate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 40px 0;
+}
+
+.certificate-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.certificate-img {
+  width: 100%;
+  height: 300px; /* Fixed height for consistent layout */
+  object-fit: contain; /* Maintain aspect ratio, no distortion */
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out;
+  box-shadow: 0 8px 20px var(--shadow);
+  background-color: #fff; /* Or a light color to simulate a frame */
+}
+
+.certificate-info {
+  margin-top: 15px;
+  color: var(--text-color);
+  text-align: center;
+  min-height: 40px; /* Reserve space so layout doesn't shift */
+}
+
+/* Responsive adjustments */
+@media (max-width: 770px) {
+  .certificate-img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-img {
+    height: 200px;
+  }
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 15px;
+}
+
+.slider-controls button {
+  padding: 8px 12px;
+  background-color: var(--color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slider-controls button:hover {
+  background-color: var(--color);
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+
+
+/* Dynamic typing  */
+.typing-container {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.6;
+  margin: 60px;
+}
+
+.static-text {
+  display: block;
+  font-weight: 600;
+  margin-bottom: -20px;
+}
+
+.typed-wrapper {
+  display: inline-block;
+  min-width: 220px; /* prevents text wobbling */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#typed {
+  font-weight: 600;
+  color: var(--color);
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--color);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .typing-container {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-container {
+    font-size: 1rem;
+  }
+}
+
+#logo_s {
+  color: white;
+}
+
+/* =====================================
+    Projects Section
+========================================*/
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: var(--card-color);
+  width: 320px; /* Fixed width on most screens */
+  min-height: 280px; /* Fixed height */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px var(--shadow);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: var(--color);
+  font-size: 1.25rem;
+}
+
+.project-card p {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.github-btn {
+  background-color: #6b7280;
+  color: white;
+}
+
+.github-btn:hover {
+  background-color: #4b5563;
+}
+
+.live-btn {
+  background-color: var(--color);
+  color: white;
+}
+
+.live-btn:hover {
+  background-color: var(--shadow);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 350px) {
+  .project-card {
+    width: 90%;
+  }
+}
+
+/* ================================
+   Social Buttons (About Section)
+=================================== */
+.social-buttons {
+  margin-top: 2rem; /* more space from the paragraph */
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* more space between buttons */
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  transition: background-color var(--transition-speed);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1); /* makes icons white for dark background */
+}
+
+/* LinkedIn Button */
+.social-btn.linkedin {
+  background-color: #0077b5;
+}
+
+.social-btn.linkedin:hover {
+  background-color: #005582;
+}
+
+/* GitHub Button */
+.social-btn.github {
+  background-color: #333;
+}
+
+.social-btn.github:hover {
+  background-color: #000;
+}
+
+/* ================================
+   About Section Styling
+=================================== */
+#about {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+#about p {
+  max-width: 800px; /* restricts max width for better readability */
+  margin: 1rem auto; /* centers content horizontally */
+  text-align: justify; /* justifies text for clean edges */
+  line-height: 2.5; /* line spacing */
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  padding: 0 1.5rem; /* ensures minimum space on small screens */
+  box-sizing: border-box; /* so padding doesn’t increase total width */
+  padding: 0 2rem;
+}
