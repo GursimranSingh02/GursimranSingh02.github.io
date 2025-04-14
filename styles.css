@@ -375,8 +375,10 @@ h2 {
   }
 }
 
+/* OPTIONAL */
+/* -------------------------------- */
 /* Responsive Typography */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .typing-container {
     font-size: 1.2rem;
   }
@@ -386,7 +388,9 @@ h2 {
   .typing-container {
     font-size: 1rem;
   }
-}
+} */
+/* ------------------------------- */
+
 
 #logo_s {
   color: white;
