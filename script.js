@@ -5,9 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hamburger.addEventListener("click", () => {
         navLinks.classList.toggle("active");
+
+        // Toggle icon between hamburger and cross
+        if (navLinks.classList.contains("active")) {
+            hamburger.textContent = "✖"; // Cross icon
+        } else {
+            hamburger.textContent = "☰"; // Hamburger icon
+        }
     });
 });
-
 
 
 
